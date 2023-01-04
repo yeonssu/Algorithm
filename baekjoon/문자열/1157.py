@@ -17,7 +17,7 @@ else:
 # sol2)
 normal_word = input()
 upper_word = normal_word.upper() 
-alphabet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+alphabet = [0]*26
 
 for i in upper_word:
     alphabet[ord(i)-65] += 1
