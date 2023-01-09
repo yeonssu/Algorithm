@@ -6,10 +6,10 @@ listen = []
 see = []
 
 for n in range(N):
-    listen.append(input())
+    listen.append(sys.stdin.readline())
 
 for m in range(M):
-    see.append(input())
+    see.append(sys.stdin.readline())
 nolistennosee = list(set(listen)&set(see))
 nolistennosee.sort()
 
