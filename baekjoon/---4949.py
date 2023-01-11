@@ -15,10 +15,15 @@ while True:
 
     stack = []
     for i in input_value:
-        if i=="(" or i=="{" or i=="[":
+        if i=="(" or i=="[":
             push(stack,i)
-        if i==")" or i=="}" or i=="]":
-            pop(stack)
-            print("yes")
+        if i==")" or i=="]":
+            if len(stack)==0:
+                push(stack,i)
+                break
+#             elif stack.
+#                 pop(stack)
+            
+# print("yes")
 
-    print(stack)
+#     print(stack)
