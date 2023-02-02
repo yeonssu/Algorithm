@@ -19,13 +19,13 @@ def bfs(a, b):
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
-            # if nx < 0 or ny < 0 or nx >= N or ny >= N: continue
-            # 이거 왜 안돼?
+            if nx < 0 or ny < 0 or nx >= N or ny >= N: continue
 
-            if 0 <= nx < N and 0 <= ny < N:
-                if not visited[nx][ny] and graph[nx][ny] == graph[x][y]:
-                    visited[nx][ny] = True
-                    que.append([nx, ny])
+
+            #if 0 <= nx < N and 0 <= ny < N:
+            if not visited[nx][ny] and graph[nx][ny] == graph[x][y]:
+                visited[nx][ny] = True
+                que.append([nx, ny])
 
 
 cnt = 0
