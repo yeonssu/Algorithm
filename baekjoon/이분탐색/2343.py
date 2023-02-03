@@ -26,7 +26,8 @@ while lower <= upper:
         # print("cnt",cnt)
 
     if cnt <= M:
-        result = min(result, mid)
+        if cnt == M:
+            result = min(result, mid)
         upper = mid - 1
     elif cnt > M:
         lower = mid + 1
