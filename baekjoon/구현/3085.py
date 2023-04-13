@@ -6,8 +6,8 @@ def count_candy(N, board):
     for i in range(N):
         # 아래랑 비교하기
         cnt = 1
-        for j in range(1, N):
-            if board[j][i] == board[j - 1][i]:
+        for j in range(N - 1):
+            if board[j][i] == board[j + 1][i]:
                 cnt += 1
             else:
                 cnt = 1
@@ -15,8 +15,8 @@ def count_candy(N, board):
 
         # 오른쪽이랑 비교하기
         cnt = 1
-        for j in range(1, N):
-            if board[i][j] == board[i][j - 1]:
+        for j in range(N - 1):
+            if board[i][j] == board[i][j + 1]:
                 cnt += 1
             else:
                 cnt = 1
