@@ -9,7 +9,7 @@ for m in range(M):
     a, b = map(int, input().strip().split())
     graph[a].append(b)
     graph[b].append(a)
-
+print(graph)
 
 def dfs(V):
     stack = list()
