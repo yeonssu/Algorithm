@@ -13,9 +13,9 @@ L, C = map(int, input().strip().split())
 chars = list(map(str, input().strip().split()))
 chars = sorted(chars)
 
-def solve(result):
-    if len(result) == L:
-        print(result)
-        result = ""
-        exit()
-
+# def solve(result):
+#     if len(result) == L and :
+#         print(result)
+#         result = ""
+#         exit()
+#

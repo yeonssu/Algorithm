@@ -34,13 +34,13 @@ def find(x):
 
 answer = 0
 for a, b, c in line:
-    aRoot = find(a)
-    bRoot = find(b)
-    if aRoot != bRoot:
-        if aRoot > bRoot:
-            root[aRoot] = bRoot
+    a_root = find(a)
+    b_root = find(b)
+    if a_root != b_root:
+        if a_root > b_root:
+            root[a_root] = b_root
         else:
-            root[bRoot] = aRoot
+            root[b_root] = a_root
         answer += c
 
 print(answer)
