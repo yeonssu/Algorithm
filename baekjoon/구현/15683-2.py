@@ -56,6 +56,11 @@ for i in range(N):
         else:
             cctv_list.append((i, j, graph[i][j]))
 
+
+# def backtracking():
+#
+#
+#
 depth = len(cctv_list)
 sub_graph = copy.deepcopy(graph)
 
