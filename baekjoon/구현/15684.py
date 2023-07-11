@@ -14,7 +14,7 @@ for p in graph:
     print(p)
 
 
-def is_i(graph):
+def is_i():
     for start in range(1, N + 1):
         x = start
         for y in range(1, H + 1):
@@ -31,7 +31,7 @@ def is_i(graph):
 
 def game_start(cnt, x, y):
     global answer
-    if is_i(graph):
+    if is_i():
         answer = cnt
         return
     elif answer <= cnt:
