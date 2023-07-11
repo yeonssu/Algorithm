@@ -30,6 +30,7 @@ def bfs(x, y, cnt):
     return cnt
 
 
+cnt = 0
 for i in range(N):
     for j in range(M):
         if graph[i][j] == "I":
