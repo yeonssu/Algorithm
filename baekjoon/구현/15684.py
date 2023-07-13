@@ -10,9 +10,6 @@ for m in range(M):
     a, b = map(int, input().strip().split())
     graph[a][b] = 1
 
-for p in graph:
-    print(p)
-
 
 def is_i():
     for start in range(1, N + 1):
@@ -32,7 +29,7 @@ def is_i():
 def game_start(cnt, x, y):
     global answer
     if is_i():
-        answer = cnt
+        answer = min(answer, cnt)
         return
     elif answer <= cnt:
         return
@@ -40,19 +37,17 @@ def game_start(cnt, x, y):
         return
 
     for i in range(y, H + 1):
-        if i == y:
-            k = x
-        else:
-            k = 0
-        for j in range(k, N + 1):
+        for j in range(x, N):
+            if graph[i][j - 1] == 1 or graph[i][j] == 1 or graph[i][j + 1] == 1:
+                continue
             if graph[i][j] == 0:
                 graph[i][j] = 1
-                game_start(cnt + 1, x, y + 2)
+                game_start(cnt + 1, x, y + 1)
                 graph[i][j] = 0
 
 
 answer = 4
-game_start(0, 0, 0)
+game_start(0, 1, 1)
 if answer < 4:
     print(answer)
 else:
