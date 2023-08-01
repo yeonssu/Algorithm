@@ -1,4 +1,4 @@
-def recount(x, y, direction):
+def sand_count(x, y, direction):
     global answer
 
     not_a = 0
@@ -19,20 +19,22 @@ def recount(x, y, direction):
 
 N = int(input())
 sand = [list(map(int, input().split())) for _ in range(N)]
+
 left = [(0, -2, 0.02),
         (-1, -1, 0.1), (0, -1, 0.07), (1, -1, 0.01),
         (-2, 0, 0.05), (-1, 0, 0),
         (-1, 1, 0.1), (0, 1, 0.07), (1, 1, 0.01),
         (0, 2, 0.02)]
-right = [(-x, y, z) for x, y, z in left]
-down = [(y, -x, z) for x, y, z in left]
+right = [(x, -y, z) for x, y, z in left]
+down = [(-y, x, z) for x, y, z in left]
 up = [(y, x, z) for x, y, z in left]
 
 start_x, start_y = N // 2, N // 2
 answer = 0
-dx = [-1, 0, 1, 0]
-dy = [0, 1, 0, -1]
-dict = {0: left, 1: down, 2: right, 3: up}
+dx = [0, 1, 0, -1]
+dy = [-1, 0, 1, 0]
+
+directions = {0: left, 1: down, 2: right, 3: up}
 time = 0
 for i in range(2 * N - 1):
     d = i % 4
@@ -41,7 +43,12 @@ for i in range(2 * N - 1):
     for _ in range(time):
         now_x = start_x + dx[d]
         now_y = start_y + dy[d]
-        recount(now_x, now_y, dict.get(d))  # y좌표, 방향
+        if 0 <= now_x < N and 0 <= now_y < N:
+            sand_count(now_y, now_x, directions[d])
+        print("===============")
+        for p in sand:
+            print(p)
+        print("===============")
         start_x, start_y = now_x, now_y
 
 print(answer)
