@@ -42,10 +42,6 @@ for i in range(2 * N - 1):
         now_y = start_y + dy[d]
         if 0 <= now_x < N and 0 <= now_y < N:
             sand_count(now_x, now_y, directions[d])
-        print("===============")
-        for p in sand:
-            print(p)
-        print("===============")
         start_x, start_y = now_x, now_y
 
 print(answer)
