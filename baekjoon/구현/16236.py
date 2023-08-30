@@ -1,6 +1,5 @@
 import sys
 from collections import deque
-
 input = sys.stdin.readline
 
 N = int(input().strip())
@@ -13,8 +12,6 @@ graph = [list(map(int, input().strip().split())) for _ in range(N)]
 # 물고기가 먹히면, 그 칸은 빈 칸이 된다.
 # < 아기 상어 조건 >
 # 처음 아기 상어의 크기 : 2
-
-
 # 1. 더 이상 먹을 수 있는 물고기가 공간에 없다면, 아기 상어는 엄마 상어에게 도움 요청 (종료)
 # 2. 먹을 수 있는 물고기가 1마리라면, 그 물고기를 먹으러 간다.
 # 3. 먹을 수 있는 물고기가 1마리보다 많다면, 거리가 가장 가까운 물고기를 먹으러 간다.
