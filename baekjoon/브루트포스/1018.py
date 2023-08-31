@@ -24,3 +24,5 @@ for a in range(N - 7):
 
         cnt_list.append(start_w)
         cnt_list.append(start_b)
+
+print(min(cnt_list))
