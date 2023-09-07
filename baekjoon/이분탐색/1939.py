@@ -29,7 +29,7 @@ def binary_search(left, right):
         mid = (left + right) // 2
         # 이동 가능 -> 중량을 늘려야 한다
         if is_possible_to_move(factory1, factory2, mid):
-            answer = max(answer, mid)
+            answer = mid
             left = mid + 1
         # 이동 불가 -> 중량을 줄여야 한다
         else:
@@ -43,6 +43,7 @@ if __name__ == "__main__":
         A, B, C = map(int, input().strip().split())
         bridge[A].append((C, B))
         bridge[B].append((C, A))
+    print(bridge)
     factory1, factory2 = list(map(int, input().strip().split()))
     answer = 0
     binary_search(1, 1000000000)
