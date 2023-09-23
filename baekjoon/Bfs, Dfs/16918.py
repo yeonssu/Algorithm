@@ -2,6 +2,7 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
+
 def install():
     que = deque()
     for i in range(R):
@@ -11,6 +12,7 @@ def install():
             else:
                 graph[i][j] = "O"
     return que
+
 
 def boom(q):
     dx = [-1, 1, 0, 0]
@@ -29,11 +31,11 @@ if __name__ == "__main__":
     R, C, N = map(int, input().strip().split())
     graph = [list(map(str, input().strip())) for _ in range(R)]
     for n in range(N + 1):
-        if n % 3 == 0:
+        if n == 1:
             continue
-        elif n % 3 == 1:
+        elif n % 2 == 0:
             q = install()
-        elif n % 3 == 2:
+        elif n % 2 == 1:
             boom(q)
     for gra in graph:
         answer = ""
