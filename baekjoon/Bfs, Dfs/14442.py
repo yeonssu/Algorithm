@@ -6,8 +6,8 @@ input = sys.stdin.readline
 def bfs(start_x, start_y, k):
     que = deque()
     que.append((start_x, start_y, k))
-    visited = [[0] * M for _ in range(N)]
-    visited[start_y][start_x] = 1
+    visited = [[[0] * K for _ in range(M)] for _ in range(N)]
+    visited[start_y][start_x][0] = 1
     dx = [-1, 1, 0, 0]
     dy = [0, 0, -1, 1]
     while que:
