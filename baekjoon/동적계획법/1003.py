@@ -1,20 +1,17 @@
-def fib_dp(n):
-    if n==0:
-        return 0
-    elif n==1:
-        return 1
-    else:
-        fib_array = [0, 1]
-        
-        for i in range(2,n+1):
-            print(fib_array[i-1])
-            print(fib_array[i-2])
-            num = fib_array[i-1] + fib_array[i-2]
-            fib_array.append(num)
-        return fib_array[n]
+import sys
+input = sys.stdin.readline
 
 
-T = int(input())
-for t in range(T):
-    N = int(input())
-    fib_dp(N)
+def fibonacci(num):
+    zero = [1, 0, 1]
+    one = [0, 1, 1]
+    if num >= 3:
+        for i in range(3, num + 1):
+            zero.append(zero[i - 1] + zero[i - 2])
+            one.append(one[i - 1] + one[i - 2])
+    print(zero[num], one[num])
+
+
+if __name__ == "__main__":
+    for _ in range(int(input().strip())):
+        fibonacci(int(input().strip()))
